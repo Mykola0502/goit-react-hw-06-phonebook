@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 // import { nanoid } from 'nanoid';
 import { Toaster } from 'react-hot-toast';
 import { useSelector } from 'react-redux';
@@ -16,17 +16,17 @@ import {
   ContactText,
 } from './App.styled';
 
-// const getContactsState = () => {
-//   const savedContacts = localStorage.getItem('contacts');
-//   if (savedContacts !== null) {
-//     const parsedContacts = JSON.parse(savedContacts);
-//     return parsedContacts;
-//   }
-// };
-
 export const App = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
+
+  // const getContactsState = () => {
+  //   const savedContacts = localStorage.getItem('contacts');
+  //   if (savedContacts !== null) {
+  //     const parsedContacts = JSON.parse(savedContacts);
+  //     return parsedContacts;
+  //   }
+  // };
 
   // const [contacts, setContacts] = useState(() => {
   //   return (
@@ -40,9 +40,9 @@ export const App = () => {
   // });
   // const [filter, setFilter] = useState('');
 
-  // useEffect(() => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   return (
     <Container>

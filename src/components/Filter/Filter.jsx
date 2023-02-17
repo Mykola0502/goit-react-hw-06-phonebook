@@ -10,7 +10,10 @@ export const Filter = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
+  // console.log(filter);
+
   const changeFilter = evt => {
+    // console.log(evt.currentTarget.value);
     dispatch(setFilter(evt.currentTarget.value));
     // setFilter(evt.currentTarget.value);
   };

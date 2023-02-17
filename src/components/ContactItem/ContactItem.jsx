@@ -7,8 +7,8 @@ import { Item, Number, DeleteBtn } from './ContactItem.styled';
 
 export const ContactItem = ({ contact }) => {
   const { id, name, number } = contact;
-  console.log(contact);
-  console.log(id, name, number);
+  // console.log(contact);
+  // console.log(id, name, number);
 
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
