@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { getContacts, getFilter } from 'redux/selectors';
 import { ContactItem } from 'components/ContactItem';
+import { FilterText } from 'components/App/App.styled';
 
 const getVisibleContacts = (contacts, filter) => {
   const filterNormalized = filter.toLowerCase().trim();
@@ -19,17 +20,32 @@ export const ContactList = () => {
   const visibleContacts = getVisibleContacts(contacts, filter);
   // console.log(visibleContacts);
 
-  return (
-    <ul>
-      {visibleContacts
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map(contact => (
-          <li key={contact.id}>
-            <ContactItem contact={contact} />
-          </li>
-        ))}
-    </ul>
+  return visibleContacts.length ? (
+    <>
+      <ul>
+        {visibleContacts
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(contact => (
+            <li key={contact.id}>
+              <ContactItem contact={contact} />
+            </li>
+          ))}
+      </ul>
+    </>
+  ) : (
+    <>
+      <FilterText>No matches found for "{filter}"!</FilterText>
+    </>
   );
+  // <ul>
+  //   {visibleContacts
+  //     .sort((a, b) => a.name.localeCompare(b.name))
+  //     .map(contact => (
+  //       <li key={contact.id}>
+  //         <ContactItem contact={contact} />
+  //       </li>
+  //     ))}
+  // </ul>
 };
 
 // export const ContactList = ({ contacts, onDeleteContact }) => {

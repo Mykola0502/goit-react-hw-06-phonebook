@@ -12,7 +12,7 @@ import {
   Container,
   Title,
   SubTitle,
-  FilterText,
+  // FilterText,
   ContactText,
 } from './App.styled';
 
@@ -51,6 +51,14 @@ export const App = () => {
       <ContactForm />
       <SubTitle>Contacts</SubTitle>
       {contacts.length || filter ? (
+        <>
+          <Filter />
+          <ContactList />
+        </>
+      ) : (
+        <ContactText>There are no phone numbers in Contacts!</ContactText>
+      )}
+      {/* {contacts.length || filter ? (
         contacts.length ? (
           <>
             <Filter />
@@ -64,7 +72,7 @@ export const App = () => {
         )
       ) : (
         <ContactText>There are no phone numbers in Contacts!</ContactText>
-      )}
+      )} */}
     </Container>
   );
 };
