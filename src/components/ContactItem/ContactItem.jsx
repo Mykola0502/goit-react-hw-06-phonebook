@@ -11,13 +11,13 @@ export const ContactItem = ({ contact }) => {
   // console.log(id, name, number);
 
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(id));
+  const handleDelete = id => dispatch(deleteContact(id));
 
   return (
     <Item>
       <span>{name}: </span>
       <Number>{number}</Number>
-      <DeleteBtn type="button" onClick={handleDelete}>
+      <DeleteBtn type="button" onClick={() => handleDelete(id)}>
         Delete
       </DeleteBtn>
     </Item>

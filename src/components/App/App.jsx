@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 // import { nanoid } from 'nanoid';
 import { Toaster } from 'react-hot-toast';
 import { useSelector } from 'react-redux';
@@ -40,9 +40,11 @@ export const App = () => {
   // });
   // const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
+
+  // console.log(contacts);
 
   return (
     <Container>
