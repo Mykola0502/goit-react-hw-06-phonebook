@@ -19,21 +19,6 @@ const persistConfig = {
   storage,
 };
 
-// const persistedContactsReducer = persistReducer(persistConfig, contactsReducer);
-
-// export const store = configureStore({
-//   reducer: {
-//     contacts: persistedContactsReducer,
-//     filter: filterReducer,
-//   },
-//   middleware: getDefaultMiddleware =>
-//     getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//       },
-//     }),
-// });
-
 const rootReducer = combineReducers({
   contacts: contactsReducer,
   filter: filterReducer,
