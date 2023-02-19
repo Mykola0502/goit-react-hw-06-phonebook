@@ -26,6 +26,12 @@ const persistConfig = {
 //     contacts: persistedContactsReducer,
 //     filter: filterReducer,
 //   },
+//   middleware: getDefaultMiddleware =>
+//     getDefaultMiddleware({
+//       serializableCheck: {
+//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+//       },
+//     }),
 // });
 
 const rootReducer = combineReducers({
